@@ -55,23 +55,7 @@ GNU Make 3.81
 
 - この時点で、リポジトリ直下で `make serve` を実行するとコンテナ側の&thinsp;Web&thinsp;サーバが起動する. ホスト側ポートは [`compose.yml`](./compose.yml) を参照. まだ記事がないのでサイト表示はほぼ空
 
-  ```
-  $ curl http://localhost:8000
-  <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-  <html>
-  <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>Directory listing for /</title>
-  </head>
-  <body>
-  <h1>Directory listing for /</h1>
-  <hr>
-  <ul>
-  </ul>
-  <hr>
-  </body>
-  </html>
-  ```
+  <img height="256" src="https://github.com/user-attachments/assets/1ef7dbf2-2b26-42e4-947f-14e61c6b762b" />
 
 - 続いてリポジトリ直下で `make html` を実行すると、既にある [`content/hello-world.md`](./content/hello-world.md) が&thinsp;HTML&thinsp;化されサイトがブログの体になる（冒頭の画像）
 
