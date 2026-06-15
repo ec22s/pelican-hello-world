@@ -6,8 +6,11 @@ services:
       - "8000:8000"
     tty: true
     volumes:
-      - pelican-project:/project
+      # - ./project:/project
+      # - pelican-project:/project
       - ./project/content:/project/content
+      - ./project/output:/project/output
+      - ./project/pelicanconf.py:/project/pelicanconf.py
 
-volumes:
-  pelican-project:
+# volumes:
+  # pelican-project:

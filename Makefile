@@ -16,9 +16,6 @@ init:
     && docker compose up -d --build $(CONTAINER) \
     && docker compose exec -it $(CONTAINER) pelican-quickstart
 
-output-clear:
-	@docker compose exec $(CONTAINER) rm -fr output/*
-
 restart:
 	@make down && make up
 
