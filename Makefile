@@ -16,6 +16,9 @@ init:
     && docker compose up -d --build $(CONTAINER) \
     && docker compose exec -it $(CONTAINER) pelican-quickstart
 
+output-for-github-actions:
+	@make up && make html
+
 restart:
 	@make down && make up
 

@@ -18,7 +18,7 @@ jobs:
 
       - name: Build static site via Docker
         run: |
-          make html
+          make output-for-github-actions
 
       # - name: Deploy to Cloudflare Pages
       #   uses: cloudflare/pages-action@v1
