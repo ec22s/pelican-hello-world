@@ -2,6 +2,8 @@
 
 Python&thinsp;の静的サイトジェネレータ&thinsp;Pelican&thinsp;の&thinsp;Docker&thinsp;用テンプレート
 
+<img height="512" src="https://github.com/user-attachments/assets/2a344c36-2900-440c-a2ab-361613c86cdf" />
+
 ### 動作確認環境（2026年6月）
 
 ```shell
@@ -51,7 +53,7 @@ GNU Make 3.81
 
 - プロジェクトフォルダに最初から `content` フォルダがある（バインドマウント）. そのため `pelican-quickstart` の最後にエラーが出るが問題なし
 
-- この時点で、リポジトリ直下で `make serve` を実行するとコンテナ側の&thinsp;Web&thinsp;サーバが起動する. ホスト側ポートは [`compose.yml`](./compose.yml) を参照. まだ記事がないのでサイトに空のページが表示される
+- この時点で、リポジトリ直下で `make serve` を実行するとコンテナ側の&thinsp;Web&thinsp;サーバが起動する. ホスト側ポートは [`compose.yml`](./compose.yml) を参照. まだ記事がないのでサイト表示はほぼ空
 
   ```
   $ curl http://localhost:8000
@@ -71,7 +73,7 @@ GNU Make 3.81
   </html>
   ```
 
-- 続いてリポジトリ直下で `make html` を実行すると、既にある [`content/hello-world.md`](./content/hello-world.md) が&thinsp;HTML&thinsp;化されサイトがブログの体になる
+- 続いてリポジトリ直下で `make html` を実行すると、既にある [`content/hello-world.md`](./content/hello-world.md) が&thinsp;HTML&thinsp;化されサイトがブログの体になる（冒頭の画像）
 
   ```
   $ make html
