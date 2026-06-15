@@ -7,7 +7,8 @@ services:
     tty: true
     volumes:
       - pelican-project:/project
-      - ./content:/project/content
+      - ./project/content:/project/content
+      - ./project/pelicanconf.py:/project/pelicanconf.py
 
 volumes:
   pelican-project:
