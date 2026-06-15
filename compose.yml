@@ -1,0 +1,13 @@
+services:
+  py:
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+    tty: true
+    volumes:
+      - pelican-project:/project
+      - ./content:/project/content
+
+volumes:
+  pelican-project:
