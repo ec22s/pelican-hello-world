@@ -122,7 +122,7 @@ GNU Make 3.81
 
 ### 問合せ先
 
-  - [<ins>プロフィール</ins>](/ec22s)&thinsp;のメールアドレス
+  - [<ins>プロフィール</ins>](//github.com/ec22s)&thinsp;のメールアドレス
 
 <br>
 
