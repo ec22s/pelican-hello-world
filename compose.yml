@@ -8,7 +8,6 @@ services:
     volumes:
       - pelican-project:/project
       - ./project/content:/project/content
-      - ./project/pelicanconf.py:/project/pelicanconf.py
 
 volumes:
   pelican-project:
