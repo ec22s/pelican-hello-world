@@ -1,10 +1,10 @@
-name: Build and Deploy to Cloudflare Pages
+name: DeployToCloudflarePages
 
 on:
-  workflow_dispatch
-  # push:
-  #   branches:
-  #     - main
+  push:
+    branches:
+      - main
+  workflow_dispatch:
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
