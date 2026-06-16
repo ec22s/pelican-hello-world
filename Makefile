@@ -5,6 +5,9 @@ CONTAINER=py
 bash:
 	@docker compose exec -it $(CONTAINER) bash
 
+deploy:
+	@make up && make html
+
 down:
 	@docker compose down $(CONTAINER)
 
@@ -15,9 +18,6 @@ init:
 	@docker compose down $(CONTAINER) -v \
     && docker compose up -d --build $(CONTAINER) \
     && docker compose exec -it $(CONTAINER) pelican-quickstart
-
-output-for-github-actions:
-	@make up && make html
 
 restart:
 	@make down && make up
