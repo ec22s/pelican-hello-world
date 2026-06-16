@@ -1,4 +1,4 @@
-Title: Hello wolrd!
+Title: Hello world!
 Date: 1-2-3
 
 # h1
