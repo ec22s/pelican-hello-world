@@ -1,6 +1,14 @@
 name: DeployToCloudflarePages
 
 on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened # default
+      - reopened # default
+      - synchronize # default
+      - ready_for_review
   push:
     branches:
       - main
@@ -12,6 +20,7 @@ env:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    if: github.event.pull_request.draft == false
     permissions:
       contents: read
       deployments: write

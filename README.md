@@ -1,5 +1,7 @@
 # pelican-hello-world
 
+<img src="https://github.com/ec22s/pelican-hello-world/workflows/DeployToCloudflarePages/badge.svg">
+
 Python&thinsp;の静的サイトジェネレータ&thinsp;Pelican&thinsp;の&thinsp;Docker&thinsp;用テンプレート
 
 <img height="512" src="https://github.com/user-attachments/assets/2a344c36-2900-440c-a2ab-361613c86cdf" />
