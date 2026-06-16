@@ -1,4 +1,4 @@
-name: Build and Deploy Pelican to Cloudflare Pages
+name: Build and Deploy to Cloudflare Pages
 
 on:
   workflow_dispatch
@@ -28,5 +28,5 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: 'pelican-hello-world'
+          projectName: ${{ vars.CLOUDFLARE_PROJECT_NAME }}
           directory: 'project/output'
