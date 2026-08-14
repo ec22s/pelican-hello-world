@@ -1,10 +1,12 @@
 # pelican-hello-world
 
-<img src="https://github.com/ec22s/pelican-hello-world/workflows/DeployToCloudflarePages/badge.svg">
+<img src="https://github.com/ec22s/pelican-hello-world/workflows/Deploy/badge.svg">
 
 Python&thinsp;の静的サイトジェネレータ&thinsp;Pelican&thinsp;の&thinsp;Docker&thinsp;用テンプレート
 
-<img height="512" src="https://github.com/user-attachments/assets/2a344c36-2900-440c-a2ab-361613c86cdf" />
+兼 GitHub Actions&thinsp;による&thinsp;Cloudflare Pages&thinsp;自動デプロイのテスト. 詳しくは&thinsp;[<ins>DEPLOY.md</ins>](doc/DEPLOY.md)
+
+<img height="384" src="https://github.com/user-attachments/assets/2a344c36-2900-440c-a2ab-361613c86cdf" />
 
 ### 動作確認環境（2026年6月）
 
@@ -69,20 +71,36 @@ GNU Make 3.81
 
 <br>
 
-### 補足
+### ホスト側とのバインドマウント
 
+- [`compose.yml`](./compose.yml) で下記ファイル・フォルダに設定している. `make down` でコンテナを終了したり、再び `make init` しても内容が維持される
 
-- `make down` でコンテナを終了してもコンテナの `/project` は消えない（ボリュームで永続化）
+  ```
+  project
+  ├── Makefile
+  ├── content
+  │   ├── hello-world.md
+  │   ├── ...
+  │   └── ...
+  ├── output
+  │   ├── ...
+  │   └── ...
+  └── pelicanconf.py
+  ```
 
-- 再び `make init` するとボリュームが削除されコンテナの `/project` が初期化されるが、`/project/content` はホスト側とのバインドマウントだから消えない
+- 理由
 
-- `make restart` など若干のユーティリティコマンドが [`Makefile`](./Makefile) にあり
+  - `content` : 記事のソースでありホスト側で編集・保存するため
 
-- Web&thinsp;サーバのログを見る場合の例
+  - その他：GitHub Actions&thinsp;で&thinsp;Cloudflare Pages&thinsp;に自動デプロイする場合に必要. 詳細 → [<ins>DEPLOY.md</ins>](./DEPLOY.md)
 
-  - `make bash` でコンテナのシェルに入る
+<br>
 
-  - `ps a` で `make serve-global` の&thinsp;PID&thinsp;を確認し `kill -9 [PID]` で止める
+### Web&thinsp;サーバのログを見る場合の例
+
+1. `make bash` でコンテナのシェルに入る
+
+2. `ps a` で `make serve-global` の&thinsp;PID&thinsp;を確認し `kill -9 [PID]` で止める
 
     ```
     root@...:/project# ps a
@@ -92,25 +110,24 @@ GNU Make 3.81
     ...
     ```
 
-  - コンテナ側で `make serve-global` を起動
+3. コンテナ側で `make serve-global` を起動
 
     ```
     root@...:/project# make serve-global
     "pelican" -l "/project/content" -o "/project/output" -s "/project/pelicanconf.py"  -b "0.0.0.0"
     Serving site at: http://0.0.0.0:8000 - Tap CTRL-C to stop
+    ...
     ```
 
 <br>
 
-### 参考
+### その他
 
-  - https://qiita.com/saira/items/71faa202efb4320cb41d
+- `make restart` など若干のユーティリティコマンドが [`Makefile`](./Makefile) にあり
 
-<br>
+- 参考にしたもの → https://qiita.com/saira/items/71faa202efb4320cb41d
 
-### 問合せ先
-
-  - [<ins>プロフィール</ins>](//github.com/ec22s)&thinsp;のメールアドレス
+- 問合せ等 → [<ins>プロフィール</ins>](//github.com/ec22s)&thinsp;のメールアドレスまで
 
 <br>
 
