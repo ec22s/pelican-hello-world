@@ -14,7 +14,7 @@
 
 - デプロイ先 = Cloudflare Pages&thinsp;のプロジェクト
 
-  - 空の状態でもよいし、最初から&thinsp;GitHub&thinsp;リポジトリへ紐付け[（後述）](#Cloudflare%E3%81%8B%E3%82%89%E3%83%AA%E3%83%9D%E3%82%B8%E3%83%88%E3%83%AA%E3%81%B8%E7%B4%90%E4%BB%98%E3%81%91)してもよい
+  - 空の状態でもよいし、最初から&thinsp;GitHub&thinsp;リポジトリへ紐付け[（後述）](#cloudflare-からリポジトリへ紐付け)してもよい
 
   - サブドメイン `****.pages.dev` は後から変えられない（2026年8月時点）
 
